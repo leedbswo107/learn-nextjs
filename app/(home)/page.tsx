@@ -2,6 +2,7 @@
 // import { useEffect, useState } from "react";
 import Movie from "../../components/movie";
 import styles from "../../styles/home.module.css";
+import { API_URL } from "../constants";
 // import Link from "next/link";
 
 interface MovieData {
@@ -13,8 +14,6 @@ interface MovieData {
 export const metadata = {
   title: "Home",
 };
-export const API_URL: string =
-  "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 // async function getMovies(url) {
 //   console.log("fetching...");

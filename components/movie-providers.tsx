@@ -1,7 +1,6 @@
-import { API_URL } from "../app/(home)/page";
+import { API_URL } from "../app/constants";
 
 const getProviders = async (id: string) => {
-  console.log(`${API_URL}/${id}/providers`);
   const res = await fetch(`${API_URL}/${id}/providers`);
   const json = await res.json();
   console.log(">>>>>>", json.US);

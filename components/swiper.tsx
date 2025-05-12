@@ -4,6 +4,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
+interface IVideo {
+  id: string;
+  name: string;
+  key: string;
+}
+
 export default function VideoSwiper({ videos }: { videos: [] }) {
   return (
     <Swiper
@@ -15,7 +21,7 @@ export default function VideoSwiper({ videos }: { videos: [] }) {
       }}
       modules={[Pagination]}
     >
-      {videos.map((video) => (
+      {videos.map((video: IVideo) => (
         <SwiperSlide>
           <iframe
             key={video.id}

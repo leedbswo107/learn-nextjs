@@ -1,16 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { API_URL } from "../app/(home)/page";
 import styles from "../styles/movie-videos.module.css";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
 import VideoSwiper from "./swiper";
-
-interface IVideo {
-  id: string;
-  key: string;
-  name: string;
-}
+import { API_URL } from "../app/constants";
 
 const getVideos = async (id: string) => {
   // await new Promise((resolve) => setTimeout(resolve, 5000));
