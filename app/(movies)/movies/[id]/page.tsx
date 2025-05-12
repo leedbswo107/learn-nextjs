@@ -17,10 +17,12 @@ import MovieVideos from "../../../../components/movie-videos";
 // };
 
 interface IParams {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export async function generateMetadata({ params: { id } }: IParams) {
+export async function generateMetadata(props: IParams) {
+  const params = await props.params;
+  const id = params.id;
   const movie = await getMovie(id);
 
   return {
@@ -28,7 +30,9 @@ export async function generateMetadata({ params: { id } }: IParams) {
   };
 }
 
-export default async function MovieDetail({ params: { id } }: IParams) {
+export default async function MovieDetail(props: IParams) {
+  const params = await props.params;
+  const id = params.id;
   // Before Parallel Req
   // const movie = await getMovie(id);
   // const videos = await getVideos(id);
